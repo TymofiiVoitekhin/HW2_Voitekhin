@@ -248,7 +248,7 @@ if __name__ == "__main__":
                     print(f"[{node_name.upper()}]: {node_data['messages'][-1].content}\n")
                 elif node_name == 'replanner':
                     # Додаємо перевірку: якщо є прапорець completed, значить це фініш
-                    if node_data.get('completed'):
+                    if node_data and node_data.get('completed'):
                         print(f"[{node_name.upper()}]: Всі кроки плану вичерпано. Роботу завершено.\n")
                     else:
                         print(f"[{node_name.upper()}]: Все йде за планом. Продовжуємо виконання кроків (continue).\n")
